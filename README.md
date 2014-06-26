@@ -4,6 +4,9 @@ LTUserSetting
 An NSUserDefault based setting store with a NSDictionary cache.
 It will store the setting value in NSUserDefault standardDefault. 
 ## Basic Usage
+- Header, include this header
+`#import <LTUserDefaultSettingStore/LTUserSetting.h>`
+
 - Get the setting store, which was a singleton 
 
     `LTUserSetting *setting = [LTUserSetting sharedStore];`
