@@ -33,34 +33,28 @@
     return setting;
 }
 
-// consider this was a specialized version.
-- (NSString *) getStringValue: (NSString *) key {
+- (id) getObjectByKey: (NSString *) key {
     @synchronized(self) {
         id cacheValue = [self.localCache objectForKey:key];
         if (cacheValue != nil)
             return cacheValue;
         // if not found, fallback to default, and cahce the value.
-        NSString *value = [self.currentDefault stringForKey:key];
+        id value = [self.currentDefault objectForKey:key];
         if (value != nil)
             [self.localCache setObject:value forKey:key];
         return value;
     }
 }
 
+// consider this was a specialized version.
+- (NSString *) getStringValue: (NSString *) key {
+    return [self getObjectByKey: key];
+}
+
 - (NSInteger) getIntValue: (NSString *) key {
-    @synchronized(self) {
-        NSNumber *cacheValue = [self.localCache objectForKey:key];
-        if (cacheValue != nil)
-            return [cacheValue integerValue];
-        // if not found, fallback to default, and cahce the value.
-        NSNumber *value = [self.currentDefault objectForKey:key];
-        if (value != nil)
-            [self.localCache setObject:value forKey:key];
-        
-        NSAssert([value respondsToSelector:@selector(integerValue)], @"mis use");
-        
-        return [value integerValue];
-    }
+    id value = [self getObjectByKey: key];
+    NSAssert([value respondsToSelector:@selector(integerValue)], @"mis use");
+    return [value integerValue];
 }
 
 // store key, value in current object.

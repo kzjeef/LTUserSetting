@@ -14,6 +14,8 @@
 
 + (id) sharedStore;
 
+- (id) getObjectByKey: (NSString *) key;
+
 - (NSString *) getStringValue: (NSString *) key;
 
 - (NSInteger) getIntValue: (NSString *) key;
