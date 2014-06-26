@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		297C6424195BC96100619E79 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 297C6423195BC96100619E79 /* Foundation.framework */; };
-		297C6429195BC96100619E79 /* LTUserDefaultSettingStore.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 297C6428195BC96100619E79 /* LTUserDefaultSettingStore.h */; };
-		297C642B195BC96100619E79 /* LTUserDefaultSettingStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 297C642A195BC96100619E79 /* LTUserDefaultSettingStore.m */; };
+		297C6429195BC96100619E79 /* LTUserSetting.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 297C6428195BC96100619E79 /* LTUserSetting.h */; };
+		297C642B195BC96100619E79 /* LTUserSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 297C642A195BC96100619E79 /* LTUserSetting.m */; };
 		297C6432195BC96100619E79 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 297C6431195BC96100619E79 /* XCTest.framework */; };
 		297C6433195BC96100619E79 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 297C6423195BC96100619E79 /* Foundation.framework */; };
 		297C6435195BC96100619E79 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 297C6434195BC96100619E79 /* UIKit.framework */; };
@@ -35,7 +35,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				297C6429195BC96100619E79 /* LTUserDefaultSettingStore.h in CopyFiles */,
+				297C6429195BC96100619E79 /* LTUserSetting.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,8 +45,8 @@
 		297C6420195BC96100619E79 /* libLTUserDefaultSettingStore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLTUserDefaultSettingStore.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		297C6423195BC96100619E79 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		297C6427195BC96100619E79 /* LTUserDefaultSettingStore-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LTUserDefaultSettingStore-Prefix.pch"; sourceTree = "<group>"; };
-		297C6428195BC96100619E79 /* LTUserDefaultSettingStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LTUserDefaultSettingStore.h; sourceTree = "<group>"; };
-		297C642A195BC96100619E79 /* LTUserDefaultSettingStore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LTUserDefaultSettingStore.m; sourceTree = "<group>"; };
+		297C6428195BC96100619E79 /* LTUserSetting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LTUserSetting.h; sourceTree = "<group>"; };
+		297C642A195BC96100619E79 /* LTUserSetting.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LTUserSetting.m; sourceTree = "<group>"; };
 		297C6430195BC96100619E79 /* LTUserDefaultSettingStoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LTUserDefaultSettingStoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		297C6431195BC96100619E79 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		297C6434195BC96100619E79 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -110,8 +110,8 @@
 		297C6425195BC96100619E79 /* LTUserDefaultSettingStore */ = {
 			isa = PBXGroup;
 			children = (
-				297C6428195BC96100619E79 /* LTUserDefaultSettingStore.h */,
-				297C642A195BC96100619E79 /* LTUserDefaultSettingStore.m */,
+				297C6428195BC96100619E79 /* LTUserSetting.h */,
+				297C642A195BC96100619E79 /* LTUserSetting.m */,
 				297C6426195BC96100619E79 /* Supporting Files */,
 			);
 			path = LTUserDefaultSettingStore;
@@ -224,7 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				297C642B195BC96100619E79 /* LTUserDefaultSettingStore.m in Sources */,
+				297C642B195BC96100619E79 /* LTUserSetting.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

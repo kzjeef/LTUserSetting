@@ -8,6 +8,8 @@
 
 #import <XCTest/XCTest.h>
 
+#import "LTUserSetting.h"
+
 @interface LTUserDefaultSettingStoreTests : XCTestCase
 
 @end
@@ -26,9 +28,32 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testSetAndGet
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+   LTUserSetting *setting = [LTUserSetting sharedStore];
+    
+    NSString *str = @"some value";
+    NSString *strcpy = [str copy];
+    [setting setKey:@"testKey" value:str isStore:NO];
+    str = @"some other value";
+    XCTAssert(![str isEqualToString:[setting getStringValue:@"testKey"]], @"should copy the value");
+    
+    NSLog(@"fetched value: %@", [setting getStringValue:@"testKey"]);
+    XCTAssert([strcpy isEqualToString:[setting getStringValue:@"testKey"]], @"should get corrent value");
+    
+    NSNumber *num = @1;
+    NSNumber *numcpy = [num copy];
+    
+    [setting setKey:@"testNum" value:num isStore:YES];
+    
+    num = @2;
+    
+    XCTAssert(numcpy.integerValue == [setting getIntValue:@"testNum"], "should equal");
+    XCTAssert(num.integerValue != [setting getIntValue:@"testNum"], "should not equal");
+    
+    NSNumber *n2 = [[NSUserDefaults standardUserDefaults] objectForKey:@"testNum"];
+
+    XCTAssert(n2.integerValue == numcpy.integerValue, @"should equal");
 }
 
 @end
